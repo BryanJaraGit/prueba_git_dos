@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>mapa</ion-title>
+  </ion-toolbar>
+</ion-header>
+<h2>Ingresa tu viaje</h2>
+
+<!--<ion-content>
+    <form [formGroup]="mapaForm" (ngSubmit)="getCurrentPosition()(mapaForm.value)"></form>
+      <ion-item>
+        <ion-label>Latitud</ion-label>
+        <ion-input formControlName="latitud"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Longitud</ion-label>
+        <ion-input formControlName="longitud"></ion-input>
+      </ion-item>
+  </ion-content>
+
+
+  <agm-map *ngIf="currentCenter"
+  [latitude]=latitud [longitude]=longitud [zoom]=defaultZoom>
+   <agm-marker [latitude]=currentCenter.lat [longitude]=currentCenter.long></agm-marker>
+  
+   <agm-polyline [strokeColor]="'red'" *ngIf="coordinates">
+    <agm-polyline-point *ngFor="let coords of coordinates" [latitude]="coords.lat" [longitude]="coords.long">
+     
+    </agm-polyline-point>
+  </agm-polyline>
+  </agm-map>
+
+
+</ion-content>-->
+
+
+<ion-content>
+  <agm-map *ngIf="currentCenter"
+  [latitude]=currentCenter.lat [longitude]=currentCenter.long [zoom]=defaultZoom>
+   <agm-marker [latitude]=currentCenter.lat [longitude]=currentCenter.long></agm-marker>
+  
+   <agm-polyline [strokeColor]="'red'" *ngIf="coordinates">
+    <agm-polyline-point *ngFor="let coords of coordinates" [latitude]="coords.lat" [longitude]="coords.long">
+     
+    </agm-polyline-point>
+  </agm-polyline>
+  </agm-map>
+
+  
+
+ 
+</ion-content>
+<ion-content>
+  <form action="">
+    <ion-item>
+      <ion-label>Ingrese punto de origen:</ion-label>
+      <ion-input type="text" name="latitud"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Ingrese punto de destino:</ion-label>
+      <ion-input type="text" name="longitud"></ion-input>
+    </ion-item>
+
+    <button ion-button type="submit">Pedir Viaje</button>
+  </form>
+</ion-content>

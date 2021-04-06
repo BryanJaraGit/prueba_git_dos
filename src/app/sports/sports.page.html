@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>sports</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <agm-map  *ngIf="currentCenter"
+   [latitude]=currentCenter.lat [longitude]=currentCenter.long [zoom]=defaultZoom>
+    <agm-marker [latitude]=currentCenter.lat [longitude]=currentCenter.long></agm-marker>
+  </agm-map>
+  
+</ion-content>
